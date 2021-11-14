@@ -18,7 +18,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "reservation")
 
-public class Reservation {
+public class Reservation implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

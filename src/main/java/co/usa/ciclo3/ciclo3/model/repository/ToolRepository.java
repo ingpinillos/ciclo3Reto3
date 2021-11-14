@@ -1,6 +1,6 @@
 /*
 * Clase model apliación alquiler de herrmientas 
-*  Repositorio
+*  Repositorio Tool
 */
 package co.usa.ciclo3.ciclo3.model.repository;
 

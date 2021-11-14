@@ -1,11 +1,11 @@
 /*
 * Clase model apliación alquiler de herrmientas 
-*  Controlador Tool
+*  Controlador Category
  */
 package co.usa.ciclo3.ciclo3.web;
 
-import co.usa.ciclo3.ciclo3.model.Tool;
-import co.usa.ciclo3.ciclo3.service.ToolService;
+import co.usa.ciclo3.ciclo3.model.Category;
+import co.usa.ciclo3.ciclo3.service.CategoryService;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,27 +24,28 @@ import org.springframework.web.bind.annotation.RestController;
  * USA.edu.co Javier Pinillos
  */
 @RestController
-@RequestMapping("/api/Tool")
+@RequestMapping("/api/Category")
 @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT,
     RequestMethod.DELETE})
-public class ToolController {
+public class CategoryController {
 
     @Autowired
-    private ToolService toolService;
+    private CategoryService categoryService;
 
     @GetMapping("/all")
-    public List<Tool> getTools() {
-        return toolService.getAll();
+    public List<Category> getCategorys() {
+        return categoryService.getAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<Tool> getTool(@PathVariable("id") int id) {
-        return toolService.getTool(id);
+    public Optional<Category> getCategory(@PathVariable("id") int id) {
+        return categoryService.getCategory(id);
     }
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Tool save(@RequestBody Tool t) {
-        return toolService.save(t);
+    public Category save(@RequestBody Category t) {
+        return categoryService.save(t);
     }
+
 }
