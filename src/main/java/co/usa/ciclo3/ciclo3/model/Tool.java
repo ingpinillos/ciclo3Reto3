@@ -35,15 +35,15 @@ public class Tool implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "category")
-    @JsonIgnoreProperties({"tools"})
+    @JsonIgnoreProperties({"tools","reservations", "messages"})
     private Category category;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "tool")
-    @JsonIgnoreProperties({"tools"})
+    @JsonIgnoreProperties({"tools","reservations", "messages"})
     public List<Message> messages;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "tool")
-    @JsonIgnoreProperties({"tools"})
+    @JsonIgnoreProperties({"tools","reservations", "messages"})
     public List<Reservation> reservations;
 
     public Integer getId() {

@@ -14,8 +14,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.bind.DefaultValue;
 
 /**
  * USA.edu.co Javier Pinillos
@@ -44,6 +42,18 @@ public class Reservation implements Serializable {
 
     private String score;
 
+    public String getStatus() {
+        if (status == null) {
+            status = "created";
+        }
+        return status;
+    }
+
+    public void setStatus(String status) {
+
+        this.status = status;
+    }
+
     public Integer getIdReservation() {
         return idReservation;
     }
@@ -66,18 +76,6 @@ public class Reservation implements Serializable {
 
     public void setDevolutionDate(Date devolutionDate) {
         this.devolutionDate = devolutionDate;
-    }
-
-    public String getStatus() {
-        if (status == null) {
-            status = "created";
-        }
-        return status;
-    }
-
-    public void setStatus(String status) {
-
-        this.status = status;
     }
 
     public Tool getTool() {
@@ -103,5 +101,6 @@ public class Reservation implements Serializable {
     public void setScore(String score) {
         this.score = score;
     }
-
+    
 }
+
