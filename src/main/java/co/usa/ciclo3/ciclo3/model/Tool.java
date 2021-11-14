@@ -39,11 +39,11 @@ public class Tool implements Serializable {
     private Category category;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "tool")
-    @JsonIgnoreProperties({"tools","reservations"})
+    @JsonIgnoreProperties({"tool"})
     public List<Message> messages;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "tool")
-    @JsonIgnoreProperties({"tools","reservations", "messages"})
+    @JsonIgnoreProperties({"tool"})
     public List<Reservation> reservations;
 
     public Integer getId() {
