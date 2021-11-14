@@ -34,7 +34,7 @@ public class Reservation implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "tool")
-    @JsonIgnoreProperties({"reservations", "messages"})
+    @JsonIgnoreProperties({"reservations"})
     private Tool tool;
 
     @ManyToOne
@@ -69,13 +69,13 @@ public class Reservation implements Serializable {
     }
 
     public String getStatus() {
+        if (status == null) {
+            status = "created";
+        }
         return status;
     }
 
     public void setStatus(String status) {
-        if (status == null) {
-            status = "created";
-        }
 
         this.status = status;
     }
