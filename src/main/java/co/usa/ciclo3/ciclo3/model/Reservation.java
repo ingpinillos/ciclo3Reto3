@@ -32,7 +32,7 @@ public class Reservation implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "tool")
-    @JsonIgnoreProperties({"reservations", "messages"})
+    @JsonIgnoreProperties({"reservations"})
     private Tool tool;
     
     @ManyToOne
