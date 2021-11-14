@@ -17,19 +17,19 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class ToolRepository {
 
-    @Autowired
+ @Autowired
 
-    private ToolCrudRepository toolCrudRepository;
+ private ToolCrudRepository toolCrudRepository;
 
-    public List<Tool> getAll() {
-        return (List<Tool>) toolCrudRepository.findAll();
-    }
+ public List<Tool> getAll() {
+  return (List<Tool>) toolCrudRepository.findAll();
+ }
 
-    public Optional<Tool> getTool(int id) {
-        return toolCrudRepository.findById(id);
-    }
+ public Optional<Tool> getTool(int id) {
+  return toolCrudRepository.findById(id);
+ }
 
-    public Tool save(Tool t) {
-        return toolCrudRepository.save(t);
-    }
+ public Tool save(Tool t) {
+  return toolCrudRepository.save(t);
+ }
 }

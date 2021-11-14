@@ -12,5 +12,5 @@ import org.springframework.data.repository.CrudRepository;
  * Javier Pinillos
  */
 public interface CategoryCrudRepository extends CrudRepository<Category, Integer>{
-    
+ 
 }

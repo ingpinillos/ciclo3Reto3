@@ -17,28 +17,28 @@ import org.springframework.stereotype.Service;
 @Service
 public class CategoryService {
 
-    @Autowired
-    private CategoryRepository categoryRepository;
+ @Autowired
+ private CategoryRepository categoryRepository;
 
-    public List<Category> getAll() {
-        return categoryRepository.getAll();
-    }
+ public List<Category> getAll() {
+  return categoryRepository.getAll();
+ }
 
-    public Optional<Category> getCategory(int id) {
-        return categoryRepository.getCategory(id);
-    }
+ public Optional<Category> getCategory(int id) {
+  return categoryRepository.getCategory(id);
+ }
 
-    public Category save(Category t) {
-        if (t.getId() == null) {
-            return categoryRepository.save(t);
-        } else {
-            Optional<Category> tAux = categoryRepository.getCategory(t.getId());
-            //if (tAux.isEmpty ()) { //isEmpty no existe
-            if (tAux.isPresent()) {
-                return categoryRepository.save(t);
-            } else {
-                return t;
-            }
-        }
-    }    
+ public Category save(Category t) {
+  if (t.getId() == null) {
+   return categoryRepository.save(t);
+  } else {
+   Optional<Category> tAux = categoryRepository.getCategory(t.getId());
+   //if (tAux.isEmpty ()) { //isEmpty no existe
+   if (tAux.isPresent()) {
+    return categoryRepository.save(t);
+   } else {
+    return t;
+   }
+  }
+ } 
 }

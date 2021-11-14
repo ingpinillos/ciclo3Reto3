@@ -20,52 +20,52 @@ import javax.persistence.Table;
 
 public class Reservation implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idReservation;
-    private Date startDate;
-    private Date devolutionDate;
-    private Integer client;
-    private Integer tool;
+ @Id
+ @GeneratedValue(strategy = GenerationType.IDENTITY)
+ private Integer idReservation;
+ private Date startDate;
+ private Date devolutionDate;
+ private Integer client;
+ private Integer tool;
 
-    public Integer getIdReservation() {
-        return idReservation;
-    }
+ public Integer getIdReservation() {
+  return idReservation;
+ }
 
-    public Date getStartDate() {
-        return startDate;
-    }
+ public Date getStartDate() {
+  return startDate;
+ }
 
-    public Date getDevolutionDate() {
-        return devolutionDate;
-    }
+ public Date getDevolutionDate() {
+  return devolutionDate;
+ }
 
-    public Integer getClient() {
-        return client;
-    }
+ public Integer getClient() {
+  return client;
+ }
 
-    public Integer getTool() {
-        return tool;
-    }
+ public Integer getTool() {
+  return tool;
+ }
 
-    public void setIdReservation(Integer idReservation) {
-        this.idReservation = idReservation;
-    }
+ public void setIdReservation(Integer idReservation) {
+  this.idReservation = idReservation;
+ }
 
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
+ public void setStartDate(Date startDate) {
+  this.startDate = startDate;
+ }
 
-    public void setDevolutionDate(Date devolutionDate) {
-        this.devolutionDate = devolutionDate;
-    }
+ public void setDevolutionDate(Date devolutionDate) {
+  this.devolutionDate = devolutionDate;
+ }
 
-    public void setClient(Integer client) {
-        this.client = client;
-    }
+ public void setClient(Integer client) {
+  this.client = client;
+ }
 
-    public void setTool(Integer tool) {
-        this.tool = tool;
-    }
+ public void setTool(Integer tool) {
+  this.tool = tool;
+ }
 
 }

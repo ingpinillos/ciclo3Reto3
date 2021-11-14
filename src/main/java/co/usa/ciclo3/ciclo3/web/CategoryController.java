@@ -26,26 +26,26 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/Category")
 @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT,
-    RequestMethod.DELETE})
+ RequestMethod.DELETE})
 public class CategoryController {
 
-    @Autowired
-    private CategoryService categoryService;
+ @Autowired
+ private CategoryService categoryService;
 
-    @GetMapping("/all")
-    public List<Category> getCategorys() {
-        return categoryService.getAll();
-    }
+ @GetMapping("/all")
+ public List<Category> getCategorys() {
+  return categoryService.getAll();
+ }
 
-    @GetMapping("/{id}")
-    public Optional<Category> getCategory(@PathVariable("id") int id) {
-        return categoryService.getCategory(id);
-    }
+ @GetMapping("/{id}")
+ public Optional<Category> getCategory(@PathVariable("id") int id) {
+  return categoryService.getCategory(id);
+ }
 
-    @PostMapping("/save")
-    @ResponseStatus(HttpStatus.CREATED)
-    public Category save(@RequestBody Category t) {
-        return categoryService.save(t);
-    }
+ @PostMapping("/save")
+ @ResponseStatus(HttpStatus.CREATED)
+ public Category save(@RequestBody Category t) {
+  return categoryService.save(t);
+ }
 
 }

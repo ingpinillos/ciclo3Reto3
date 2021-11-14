@@ -16,23 +16,23 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class CategoryRepository {
-    @Autowired
+ @Autowired
 
-    private CategoryCrudRepository categoryCrudRepository;
+ private CategoryCrudRepository categoryCrudRepository;
 
-    public List<Category> getAll() {
-        return (List<Category>) categoryCrudRepository.findAll();
-    }
+ public List<Category> getAll() {
+  return (List<Category>) categoryCrudRepository.findAll();
+ }
 
-    public Optional<Category> getTool(int id) {
-        return categoryCrudRepository.findById(id);
-    }
+ public Optional<Category> getTool(int id) {
+  return categoryCrudRepository.findById(id);
+ }
 
-    public Category save(Category c) {
-        return categoryCrudRepository.save(c);
-    }    
+ public Category save(Category c) {
+  return categoryCrudRepository.save(c);
+ } 
 
-    public Optional<Category> getCategory(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+ public Optional<Category> getCategory(int id) {
+  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+ }
 }

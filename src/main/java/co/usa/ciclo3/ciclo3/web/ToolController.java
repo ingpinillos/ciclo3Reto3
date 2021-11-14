@@ -1,6 +1,6 @@
 /*
 * Clase model apliación alquiler de herrmientas 
-*  Controlador Tool
+* Controlador Tool
  */
 package co.usa.ciclo3.ciclo3.web;
 
@@ -26,25 +26,25 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/Tool")
 @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT,
-    RequestMethod.DELETE})
+ RequestMethod.DELETE})
 public class ToolController {
 
-    @Autowired
-    private ToolService toolService;
+ @Autowired
+ private ToolService toolService;
 
-    @GetMapping("/all")
-    public List<Tool> getTools() {
-        return toolService.getAll();
-    }
+ @GetMapping("/all")
+ public List<Tool> getTools() {
+  return toolService.getAll();
+ }
 
-    @GetMapping("/{id}")
-    public Optional<Tool> getTool(@PathVariable("id") int id) {
-        return toolService.getTool(id);
-    }
+ @GetMapping("/{id}")
+ public Optional<Tool> getTool(@PathVariable("id") int id) {
+  return toolService.getTool(id);
+ }
 
-    @PostMapping("/save")
-    @ResponseStatus(HttpStatus.CREATED)
-    public Tool save(@RequestBody Tool t) {
-        return toolService.save(t);
-    }
+ @PostMapping("/save")
+ @ResponseStatus(HttpStatus.CREATED)
+ public Tool save(@RequestBody Tool t) {
+  return toolService.save(t);
+ }
 }
