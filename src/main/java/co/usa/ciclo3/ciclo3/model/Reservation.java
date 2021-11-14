@@ -14,6 +14,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.bind.DefaultValue;
 
 /**
  * USA.edu.co Javier Pinillos
@@ -28,10 +30,12 @@ public class Reservation implements Serializable {
     private Integer idReservation;
     private Date startDate;
     private Date devolutionDate;
+    @Value("created")
     private String status;
+    
     @ManyToOne
     @JoinColumn(name = "tool")
-    @JsonIgnoreProperties({"tools", "reservations", "messages"})
+    @JsonIgnoreProperties({"tools", "reservations"})
     private Tool tool;
 
     @ManyToOne
