@@ -1,11 +1,11 @@
 /*
 * Aplicación alquiler de herrmientas 
-*  Controlador Category
+*  Controlador Reservation
  */
 package co.usa.ciclo3.ciclo3.web;
 
-import co.usa.ciclo3.ciclo3.model.Category;
-import co.usa.ciclo3.ciclo3.service.CategoryService;
+import co.usa.ciclo3.ciclo3.model.Reservation;
+import co.usa.ciclo3.ciclo3.service.ReservationService;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,28 +24,28 @@ import org.springframework.web.bind.annotation.RestController;
  * USA.edu.co Javier Pinillos
  */
 @RestController
-@RequestMapping("/api/Category")
+@RequestMapping("/api/Reservation")
 @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT,
     RequestMethod.DELETE})
-public class CategoryController {
+public class ReservationController {
 
     @Autowired
-    private CategoryService categoryService;
+    private ReservationService reservationService;
 
     @GetMapping("/all")
-    public List<Category> getCategorys() {
-        return categoryService.getAll();
+    public List<Reservation> getReservations() {
+        return reservationService.getAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<Category> getCategory(@PathVariable("id") int id) {
-        return categoryService.getCategory(id);
+    public Optional<Reservation> getReservation(@PathVariable("id") int id) {
+        return reservationService.getReservation(id);
     }
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Category save(@RequestBody Category t) {
-        return categoryService.save(t);
+    public Reservation save(@RequestBody Reservation t) {
+        return reservationService.save(t);
     }
 
 }

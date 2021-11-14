@@ -1,5 +1,5 @@
 /*
-* Clase model apliación alquiler de herrmientas 
+* Aplicación alquiler de herrmientas 
 *  Servicio Tool
  */
 package co.usa.ciclo3.ciclo3.service;
@@ -17,28 +17,28 @@ import org.springframework.stereotype.Service;
 @Service
 public class ToolService {
 
- @Autowired
- private ToolRepository toolRepository;
+    @Autowired
+    private ToolRepository toolRepository;
 
- public List<Tool> getAll() {
-  return toolRepository.getAll();
- }
+    public List<Tool> getAll() {
+        return toolRepository.getAll();
+    }
 
- public Optional<Tool> getTool(int id) {
-  return toolRepository.getTool(id);
- }
+    public Optional<Tool> getTool(int id) {
+        return toolRepository.getTool(id);
+    }
 
- public Tool save(Tool t) {
-  if (t.getId() == null) {
-   return toolRepository.save(t);
-  } else {
-   Optional<Tool> tAux = toolRepository.getTool(t.getId());
-   //if (tAux.isEmpty ()) { //isEmpty no existe
-   if (tAux.isPresent()) {
-    return toolRepository.save(t);
-   } else {
-    return t;
-   }
-  }
- }
+    public Tool save(Tool t) {
+        if (t.getId() == null) {
+            return toolRepository.save(t);
+        } else {
+            Optional<Tool> tAux = toolRepository.getTool(t.getId());
+            //if (tAux.isEmpty ()) { //isEmpty no existe
+            if (tAux.isPresent()) {
+                return toolRepository.save(t);
+            } else {
+                return t;
+            }
+        }
+    }
 }

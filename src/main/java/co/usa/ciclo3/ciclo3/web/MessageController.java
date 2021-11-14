@@ -1,11 +1,11 @@
 /*
 * Aplicación alquiler de herrmientas 
-*  Controlador Category
+*  Controlador Message
  */
 package co.usa.ciclo3.ciclo3.web;
 
-import co.usa.ciclo3.ciclo3.model.Category;
-import co.usa.ciclo3.ciclo3.service.CategoryService;
+import co.usa.ciclo3.ciclo3.model.Message;
+import co.usa.ciclo3.ciclo3.service.MessageService;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,28 +24,28 @@ import org.springframework.web.bind.annotation.RestController;
  * USA.edu.co Javier Pinillos
  */
 @RestController
-@RequestMapping("/api/Category")
+@RequestMapping("/api/Message")
 @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT,
     RequestMethod.DELETE})
-public class CategoryController {
+public class MessageController {
 
     @Autowired
-    private CategoryService categoryService;
+    private MessageService messageService;
 
     @GetMapping("/all")
-    public List<Category> getCategorys() {
-        return categoryService.getAll();
+    public List<Message> getMessages() {
+        return messageService.getAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<Category> getCategory(@PathVariable("id") int id) {
-        return categoryService.getCategory(id);
+    public Optional<Message> getMessage(@PathVariable("id") int id) {
+        return messageService.getMessage(id);
     }
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Category save(@RequestBody Category t) {
-        return categoryService.save(t);
+    public Message save(@RequestBody Message t) {
+        return messageService.save(t);
     }
 
 }

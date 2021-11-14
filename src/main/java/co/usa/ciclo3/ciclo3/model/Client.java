@@ -1,14 +1,17 @@
 /*
- * Clase model apliación alquiler de herrmientas 
+ * Aplicación alquiler de herrmientas 
 * Tabla Client
  */
 package co.usa.ciclo3.ciclo3.model;
 
 import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -19,52 +22,74 @@ import javax.persistence.Table;
 
 public class Client implements Serializable {
 
- @Id
- @GeneratedValue(strategy = GenerationType.IDENTITY)
- private Integer idClient;
- private String email;
- private String password;
- private String name;
- private String age;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer idClient;
+    private String email;
+    private String password;
+    private String name;
+    private String age;
 
- public Integer getIdClient() {
-  return idClient;
- }
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "client")
+    public List<Message> messages;
 
- public String getEmail() {
-  return email;
- }
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "client")
+    public List<Reservation> reservations;
 
- public String getPassword() {
-  return password;
- }
+    public Integer getIdClient() {
+        return idClient;
+    }
 
- public String getName() {
-  return name;
- }
+    public void setIdClient(Integer idClient) {
+        this.idClient = idClient;
+    }
 
- public String getAge() {
-  return age;
- }
+    public String getEmail() {
+        return email;
+    }
 
- public void setIdClient(Integer idClient) {
-  this.idClient = idClient;
- }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
- public void setEmail(String email) {
-  this.email = email;
- }
+    public String getPassword() {
+        return password;
+    }
 
- public void setPassword(String password) {
-  this.password = password;
- }
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
- public void setName(String name) {
-  this.name = name;
- }
+    public String getName() {
+        return name;
+    }
 
- public void setAge(String age) {
-  this.age = age;
- }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public List<Message> getMessages() {
+        return messages;
+    }
+
+    public void setMessages(List<Message> messages) {
+        this.messages = messages;
+    }
+
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
+    }
 
 }

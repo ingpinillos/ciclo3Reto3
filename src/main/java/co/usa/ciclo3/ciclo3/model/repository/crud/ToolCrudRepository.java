@@ -1,6 +1,6 @@
 /*
-* Clase model apliación alquiler de herrmientas 
-*  Repositorio CRUD Tool
+* Apliación alquiler de herrmientas 
+*  Clase Repositorio CRUD Tool
 */
 package co.usa.ciclo3.ciclo3.model.repository.crud;
 

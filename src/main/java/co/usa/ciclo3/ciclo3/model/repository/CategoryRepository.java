@@ -1,6 +1,6 @@
 /*
-* Clase model apliación alquiler de herrmientas 
-*  Repositorio Category
+* Apliación alquiler de herrmientas 
+*  Clase Repositorio Category
 */
 package co.usa.ciclo3.ciclo3.model.repository;
 
