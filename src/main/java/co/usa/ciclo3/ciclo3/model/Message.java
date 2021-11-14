@@ -32,11 +32,10 @@ public class Message implements Serializable {
     @JsonIgnoreProperties({"messages"})
     private Tool tool;
 
-    @ManyToOne
-    @JoinColumn(name = "client")
-    @JsonIgnoreProperties({"messages"})
-    private Client client;
-
+//    @ManyToOne
+//    @JoinColumn(name = "client")
+//    @JsonIgnoreProperties({"messages"})
+//    private Client client;
     public Integer getIdMessage() {
         return idMessage;
     }
@@ -59,14 +58,6 @@ public class Message implements Serializable {
 
     public void setTool(Tool tool) {
         this.tool = tool;
-    }
-
-    public Client getClient() {
-        return client;
-    }
-
-    public void setClient(Client client) {
-        this.client = client;
     }
 
 }
