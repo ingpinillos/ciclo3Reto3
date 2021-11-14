@@ -32,9 +32,9 @@ public class Reservation implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "tool")
-    @JsonIgnoreProperties({"reservations"})
+    @JsonIgnoreProperties({"reservations","tool","client"})
     private Tool tool;
-    
+
     @ManyToOne
     @JoinColumn(name = "client")
     @JsonIgnoreProperties({"reservations", "messages"})
@@ -101,6 +101,5 @@ public class Reservation implements Serializable {
     public void setScore(String score) {
         this.score = score;
     }
-    
-}
 
+}
