@@ -28,16 +28,18 @@ public class Reservation implements Serializable {
     private Integer idReservation;
     private Date startDate;
     private Date devolutionDate;
+    private String status;
+    @ManyToOne
+    @JoinColumn(name = "tool")
+    @JsonIgnoreProperties({"tools", "reservations", "messages"})
+    private Tool tool;
 
     @ManyToOne
     @JoinColumn(name = "client")
-    @JsonIgnoreProperties({"tools","reservations","messages"})
+    @JsonIgnoreProperties({"tools", "reservations", "messages"})
     private Client client;
 
-    @ManyToOne
-    @JoinColumn(name = "tool")
-    @JsonIgnoreProperties({"tools","reservations","messages"})
-    private Tool tool;
+    private String score;
 
     public Integer getIdReservation() {
         return idReservation;
@@ -63,12 +65,12 @@ public class Reservation implements Serializable {
         this.devolutionDate = devolutionDate;
     }
 
-    public Client getClient() {
-        return client;
+    public String getStatus() {
+        return status;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public Tool getTool() {
@@ -77,6 +79,22 @@ public class Reservation implements Serializable {
 
     public void setTool(Tool tool) {
         this.tool = tool;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public String getScore() {
+        return score;
+    }
+
+    public void setScore(String score) {
+        this.score = score;
     }
 
 }
