@@ -30,17 +30,17 @@ public class Reservation implements Serializable {
     private Integer idReservation;
     private Date startDate;
     private Date devolutionDate;
-    @Value("created")
     private String status;
-    
+
     @ManyToOne
     @JoinColumn(name = "tool")
-    @JsonIgnoreProperties({"tools", "reservations"})
+    @JsonIgnoreProperties({"tools"})
     private Tool tool;
 
     @ManyToOne
     @JoinColumn(name = "client")
-    @JsonIgnoreProperties({"tools", "reservations", "messages"})
+//    @JsonIgnoreProperties({"tools", "reservations", "messages"})
+    @JsonIgnoreProperties({"tools", "messages"})
     private Client client;
 
     private String score;
@@ -74,6 +74,10 @@ public class Reservation implements Serializable {
     }
 
     public void setStatus(String status) {
+        if (status == null) {
+            status = "created";
+        }
+
         this.status = status;
     }
 
