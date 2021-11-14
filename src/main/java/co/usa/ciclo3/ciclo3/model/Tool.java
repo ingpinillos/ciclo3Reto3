@@ -38,8 +38,8 @@ public class Tool implements Serializable {
     @JsonIgnoreProperties({"tools"})
     private Category category;
 
-//    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "tool")
-//    public List<Message> messages;
+   @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "tool")
+    public List<Message> messages;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "tool")
     public List<Reservation> reservations;
