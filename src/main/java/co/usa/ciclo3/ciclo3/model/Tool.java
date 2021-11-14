@@ -38,8 +38,8 @@ public class Tool implements Serializable {
     @JsonIgnoreProperties({"tools"})
     private Category category;
 
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "tool")
-    public List<Message> messages;
+//    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "tool")
+//    public List<Message> messages;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "tool")
     public List<Reservation> reservations;
@@ -92,13 +92,13 @@ public class Tool implements Serializable {
         this.category = category;
     }
 
-    public List<Message> getMessages() {
-        return messages;
-    }
-
-    public void setMessages(List<Message> messages) {
-        this.messages = messages;
-    }
+//    public List<Message> getMessages() {
+//        return messages;
+//    }
+//
+//    public void setMessages(List<Message> messages) {
+//        this.messages = messages;
+//    }
 
     public List<Reservation> getReservations() {
         return reservations;

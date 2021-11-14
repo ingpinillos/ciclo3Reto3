@@ -27,10 +27,10 @@ public class Message implements Serializable {
     private Integer idMessage;
     private String messageText;
 
-    @ManyToOne
-    @JoinColumn(name = "tool")
-    @JsonIgnoreProperties({"messages"})
-    private Tool tool;
+//    @ManyToOne
+//    @JoinColumn(name = "tool")
+//    @JsonIgnoreProperties({"messages"})
+//    private Tool tool;
 
 //    @ManyToOne
 //    @JoinColumn(name = "client")
@@ -52,12 +52,12 @@ public class Message implements Serializable {
         this.messageText = messageText;
     }
 
-    public Tool getTool() {
-        return tool;
-    }
-
-    public void setTool(Tool tool) {
-        this.tool = tool;
-    }
+//    public Tool getTool() {
+//        return tool;
+//    }
+//
+//    public void setTool(Tool tool) {
+//        this.tool = tool;
+//    }
 
 }
