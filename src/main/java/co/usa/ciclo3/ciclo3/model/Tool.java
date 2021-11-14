@@ -38,7 +38,7 @@ public class Tool implements Serializable {
     @JsonIgnoreProperties({"tools"})
     private Category category;
 
-   @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "tool")
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "tool")
     @JsonIgnoreProperties({"tools"})
     public List<Message> messages;
 
@@ -94,14 +94,13 @@ public class Tool implements Serializable {
         this.category = category;
     }
 
-//    public List<Message> getMessages() {
-//        return messages;
-//    }
-//
-//    public void setMessages(List<Message> messages) {
-//        this.messages = messages;
-//    }
+    public List<Message> getMessages() {
+        return messages;
+    }
 
+    public void setMessages(List<Message> messages) {
+        this.messages = messages;
+    }
     public List<Reservation> getReservations() {
         return reservations;
     }
