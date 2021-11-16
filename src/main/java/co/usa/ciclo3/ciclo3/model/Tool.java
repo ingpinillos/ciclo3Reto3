@@ -34,7 +34,7 @@ public class Tool implements Serializable {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "category")
+    @JoinColumn(name = "categoryId")
     @JsonIgnoreProperties({"tools","reservations"})
     private Category category;
 
