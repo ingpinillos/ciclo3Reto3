@@ -33,7 +33,7 @@ public class Category implements Serializable {
     @JsonIgnoreProperties({"category"})
     private List<Tool> tools;
 
-    private Integer getId() {
+    public Integer getId() {
         return id;
     }
 
