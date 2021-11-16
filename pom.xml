@@ -9,9 +9,15 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>co.usa.ciclo3</groupId>
+<<<<<<< HEAD
 	<artifactId>reto3</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>reto3</name>
+=======
+	<artifactId>reto4</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>reto4</name>
+>>>>>>> a4aeef9e5c9a0701cd9e1ed760afda3529383f71
 	<description>Custom metrics demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
