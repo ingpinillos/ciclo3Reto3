@@ -31,12 +31,12 @@ public class Reservation implements Serializable {
     private String status;
 
     @ManyToOne
-    @JoinColumn(name = "tool")
+    @JoinColumn(name = "id")
     @JsonIgnoreProperties({"messages","reservations","tools","clients"})
     private Tool tool;
 
     @ManyToOne
-    @JoinColumn(name = "client")
+    @JoinColumn(name = "idClient")
     @JsonIgnoreProperties({"messages","reservations","tools","clients"})
     private Client client;
 
